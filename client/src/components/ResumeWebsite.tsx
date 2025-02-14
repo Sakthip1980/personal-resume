@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const professionalSummary = `Experienced finance professional with over a decade of expertise in financial management, strategic planning, and corporate governance. Demonstrated success in budgeting, forecasting, financial modeling, and compliance controls (GAAP, IFRS). Adept at driving cost reduction initiatives, re-engineering business processes, and performing complex trend analysis to optimize financial performance. Skilled in cross-functional collaboration and long-term strategic decision-making to foster growth and profitability.`;
 
@@ -70,13 +71,13 @@ const education = [
 
 export default function ResumeWebsite() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 flex flex-col">
-      <header className="bg-white shadow-md px-6 py-4 flex items-center justify-between">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <header className="bg-background border-b shadow-sm px-6 py-4 flex items-center justify-between">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-bold text-2xl"
+          className="font-bold text-2xl text-foreground"
         >
           Meet Me
         </motion.div>
@@ -84,17 +85,18 @@ export default function ResumeWebsite() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-x-4"
+          className="flex items-center space-x-4"
         >
-          <a href="#about" className="hover:text-gray-600 transition-colors">About</a>
-          <a href="#experience" className="hover:text-gray-600 transition-colors">Experience</a>
-          <a href="#skills" className="hover:text-gray-600 transition-colors">Skills</a>
-          <a href="#education" className="hover:text-gray-600 transition-colors">Education</a>
-          <a href="#contact" className="hover:text-gray-600 transition-colors">Contact</a>
+          <a href="#about" className="hover:text-muted-foreground transition-colors">About</a>
+          <a href="#experience" className="hover:text-muted-foreground transition-colors">Experience</a>
+          <a href="#skills" className="hover:text-muted-foreground transition-colors">Skills</a>
+          <a href="#education" className="hover:text-muted-foreground transition-colors">Education</a>
+          <a href="#contact" className="hover:text-muted-foreground transition-colors">Contact</a>
+          <ThemeToggle />
         </motion.nav>
       </header>
 
-      <section id="about" className="py-16 bg-white">
+      <section id="about" className="py-16 bg-background">
         <motion.div
           className="container mx-auto px-6 flex items-center shadow rounded-2xl p-6"
           initial={{ opacity: 0, y: 20 }}
@@ -118,7 +120,7 @@ export default function ResumeWebsite() {
         </motion.div>
       </section>
 
-      <section id="experience" className="py-12 px-6">
+      <section id="experience" className="py-12 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -156,7 +158,7 @@ export default function ResumeWebsite() {
         </div>
       </section>
 
-      <section id="skills" className="bg-white py-12 px-6">
+      <section id="skills" className="bg-background py-12 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -192,7 +194,7 @@ export default function ResumeWebsite() {
         </div>
       </section>
 
-      <section id="education" className="py-12 px-6 bg-gray-50">
+      <section id="education" className="py-12 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -221,7 +223,7 @@ export default function ResumeWebsite() {
         </div>
       </section>
 
-      <section id="additional-info" className="py-12 px-6">
+      <section id="additional-info" className="py-12 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -257,7 +259,7 @@ export default function ResumeWebsite() {
         </div>
       </section>
 
-      <section id="contact" className="py-12 px-6 bg-gray-100">
+      <section id="contact" className="py-12 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
