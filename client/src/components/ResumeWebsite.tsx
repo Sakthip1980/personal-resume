@@ -133,7 +133,7 @@ export default function ResumeWebsite() {
               <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-2xl" />
 
               <motion.img
-                src="/HaripriyaHeadshot.jpg"
+                src="/headshot.jpeg"
                 alt="Professional Headshot"
                 className="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-300"
                 initial={{ opacity: 0 }}
