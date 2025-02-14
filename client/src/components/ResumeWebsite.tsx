@@ -104,7 +104,7 @@ export default function ResumeWebsite() {
           transition={{ duration: 0.5 }}
         >
           <div className="w-full md:w-1/2 text-left pr-4">
-            <motion.h1 
+            <motion.h1
               className="text-4xl font-bold mb-4"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -112,7 +112,7 @@ export default function ResumeWebsite() {
             >
               Haripriya Tanuku Venkata
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="max-w-xl text-lg text-gray-700"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -168,10 +168,11 @@ export default function ResumeWebsite() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 className="mb-8 ml-4 relative"
               >
                 <div className="w-3 h-3 bg-blue-500 rounded-full absolute -left-5 top-2" />
-                <div className="bg-white shadow-md rounded-2xl p-6">
+                <div className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 rounded-2xl p-6">
                   <h3 className="text-xl font-bold">{exp.role}</h3>
                   <p className="text-gray-700 font-semibold">{exp.company}</p>
                   <p className="text-sm text-gray-500 mb-2">{exp.duration}</p>
@@ -271,7 +272,8 @@ export default function ResumeWebsite() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white shadow-md rounded-2xl p-6"
+              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+              className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 rounded-2xl p-6"
             >
               <h3 className="text-xl font-bold">Power MBA</h3>
               <p className="text-gray-700 font-semibold">The Power Business School</p>
@@ -281,7 +283,8 @@ export default function ResumeWebsite() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white shadow-md rounded-2xl p-6"
+              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+              className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 rounded-2xl p-6"
             >
               <h3 className="text-xl font-bold">Generative AI and Data Analytics</h3>
               <p className="text-gray-700 font-semibold">LinkedIn Learning</p>
