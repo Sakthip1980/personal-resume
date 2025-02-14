@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin } from "lucide-react";
+import { ContactForm } from "@/components/ui/contact-form";
 
 const professionalSummary = `Experienced finance professional with over a decade of expertise in financial management, strategic planning, and corporate governance. Demonstrated success in budgeting, forecasting, financial modeling, and compliance controls (GAAP, IFRS). Adept at driving cost reduction initiatives, re-engineering business processes, and performing complex trend analysis to optimize financial performance. Skilled in cross-functional collaboration and long-term strategic decision-making to foster growth and profitability.`;
 
@@ -103,17 +104,47 @@ export default function ResumeWebsite() {
           transition={{ duration: 0.5 }}
         >
           <div className="w-full md:w-1/2 text-left pr-4">
-            <h1 className="text-4xl font-bold mb-4">Haripriya Tanuku Venkata</h1>
-            <p className="max-w-xl text-lg text-gray-700">
+            <motion.h1 
+              className="text-4xl font-bold mb-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Haripriya Tanuku Venkata
+            </motion.h1>
+            <motion.p 
+              className="max-w-xl text-lg text-gray-700"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               {professionalSummary}
-            </p>
+            </motion.p>
           </div>
           <div className="hidden md:block md:w-1/2">
-            <img
-              src="/HaripriyaHeadshot.jpg"
-              alt="Placeholder Headshot"
-              className="rounded-2xl shadow mx-auto"
-            />
+            <motion.div
+              className="relative w-full h-[400px] rounded-2xl overflow-hidden"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              {/* Skeleton loader */}
+              <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-2xl" />
+
+              <motion.img
+                src="/HaripriyaHeadshot.jpg"
+                alt="Professional Headshot"
+                className="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                onLoad={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.opacity = '1';
+                }}
+                style={{ opacity: 0 }}
+              />
+            </motion.div>
           </div>
         </motion.div>
       </section>
@@ -175,8 +206,9 @@ export default function ResumeWebsite() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
-                <Card className="rounded-2xl shadow">
+                <Card className="rounded-2xl shadow hover:shadow-lg transition-shadow duration-300">
                   <CardHeader>
                     <CardTitle className="text-lg font-medium">{skill.name}</CardTitle>
                   </CardHeader>
@@ -211,7 +243,8 @@ export default function ResumeWebsite() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white shadow-md rounded-2xl p-6"
+                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 rounded-2xl p-6"
               >
                 <h3 className="text-xl font-bold">{edu.degree}</h3>
                 <p className="text-gray-700 font-semibold">{edu.institution}</p>
@@ -268,50 +301,15 @@ export default function ResumeWebsite() {
           >
             Get In Touch
           </motion.h2>
-          <motion.form
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="max-w-xl mx-auto space-y-4"
+            className="max-w-xl mx-auto"
           >
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="name">
-                Name
-              </label>
-              <input
-                id="name"
-                type="text"
-                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Your Name"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="email">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Your Email"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="message">
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={4}
-                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Your Message"
-              />
-            </div>
-            <Button className="flex items-center gap-2">
-              <Mail className="w-4 h-4" /> Send Message
-            </Button>
-          </motion.form>
+            <ContactForm />
+          </motion.div>
         </div>
       </section>
 
