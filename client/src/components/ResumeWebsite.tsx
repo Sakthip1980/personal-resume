@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin } from "lucide-react";
 import { ContactForm } from "@/components/ui/contact-form";
+import { Timeline } from "@/components/ui/timeline";
 
 const professionalSummary = `Experienced finance professional with over a decade of expertise in financial management, strategic planning, and corporate governance. Demonstrated success in budgeting, forecasting, financial modeling, and compliance controls (GAAP, IFRS). Adept at driving cost reduction initiatives, re-engineering business processes, and performing complex trend analysis to optimize financial performance. Skilled in cross-functional collaboration and long-term strategic decision-making to foster growth and profitability.`;
 
@@ -160,31 +161,7 @@ export default function ResumeWebsite() {
           >
             Work Experience
           </motion.h2>
-          <div className="relative border-l border-gray-300 pl-8">
-            {experiences.map((exp, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                className="mb-8 ml-4 relative"
-              >
-                <div className="w-3 h-3 bg-blue-500 rounded-full absolute -left-5 top-2" />
-                <div className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold">{exp.role}</h3>
-                  <p className="text-gray-700 font-semibold">{exp.company}</p>
-                  <p className="text-sm text-gray-500 mb-2">{exp.duration}</p>
-                  {exp.description.split("\n").map((line, i) => (
-                    <p className="text-gray-700" key={i}>
-                      {line} <br/>
-                    </p>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <Timeline items={experiences} />
         </div>
       </section>
 
