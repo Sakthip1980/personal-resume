@@ -298,7 +298,7 @@ export default function ResumeWebsite() {
           <p className="text-sm text-gray-500">© {new Date().getFullYear()} Haripriya Tanuku Venkata. All rights reserved.</p>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <a
-              href="https://www.linkedin.com/in/your-linkedin-profile"
+              href="https://www.linkedin.com/in/haripriyatanuku"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 flex items-center gap-1 hover:underline"
